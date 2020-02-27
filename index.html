@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Popup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <button class="button" id="openPopUp"> PopUp</button>
+    <div class="popup" id="popup">
+      <div class="popup-inner">
+        <div class="popuptext">
+          <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum</p>
+        </div>
+        <a class="closepopup" href="#">X</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const PopUpStyle = {
+      visibility: 'visible',
+      opacity: 1
+    }
+    const popupInnerStyle = {
+      bottom: 0,
+      right: 0,
+      transform: 'rotate(0)'
+    }
+    const popUpElement = document.getElementById('popup')
+    const popupInner = document.querySelector('.popup-inner');
+
+    document.getElementById('openPopUp').addEventListener('click', (event) => {
+      Object.assign(popUpElement.style, PopUpStyle);
+      Object.assign(popupInner.style, popupInnerStyle);
+    })
+
+    document.querySelector('.closepopup').addEventListener('click', (event) => {
+      event.preventDefault()
+      popUpElement.removeAttribute('style')
+      popupInner.removeAttribute('style')
+    })
+  </script>
+</body>
+
+</html>
